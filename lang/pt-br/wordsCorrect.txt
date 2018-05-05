@@ -1,0 +1,43 @@
+oce,você
+ocê,você
+vc,você
+voce,você
+mermao,você
+mermão,você
+mano,você
+tb,também
+tbm,também
+tambem,também
+ola,olá
+iae,olá
+ksa,casa
+vdd,verdade
+ctz,certeza
+sdds,saudades
+blz,beleza
+kd,cadê
+aki,aqui
+naum,não
+axim,assim
+axo,acho
+eh,é
+oq,o que
+taum,tão
+concerteza,com certeza
+xau,tchau
+tiau,tchau
+flw,tchau
+net,internet
+tá,está
+ta,está
+to,estou
+tô,estou
+pra,para
+miga,amiga
+migo,amigo
+otm,ótimo
+fmz,firmeza
+vlw,obrigado
+qq,qualquer
+pfv,por favor
+bjs,beijos
