@@ -19,7 +19,7 @@ class facadePrebot():
         #normalizing text class
         self._normalizeText = normalizeText()
         #support class
-        self._suport = prebotSupport()
+        self._suport = prebotSupport(lang)
         #if cogroo is necessary
         if(cogroo):
             pass

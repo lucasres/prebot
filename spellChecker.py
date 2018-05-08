@@ -57,6 +57,10 @@ class spellChecker():
         return sp.token2String(rs)
 
     def getWords(self):
+        """
+        Get words loads
+        :return : List
+        """
         print(self.WORDS)
 
     def getWordsFromFile(self):

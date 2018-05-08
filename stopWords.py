@@ -2,7 +2,7 @@ from support import prebotSupport
 
 class stopWord():
 
-    def __init__(self, path = "stopWords.txt"):
+    def __init__(self, path = ""):
         """
         Construct of the class
         :param path: String
