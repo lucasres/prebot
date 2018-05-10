@@ -63,37 +63,21 @@ class prebotSupport:
         :return: List     """
         aux = []
         rs = []
+        #check if end is .
+        if(not text[-1] is '.'):
+            text += '.'
+
         text = text.lower()
         tokens = self.string2Token(text)
-        if unit is "token":
-            for tk in tokens:
-                if tk[-1] is ".":
-                    if tk in self.abbreviation:
-                        aux.append(tk)
-                    else:
-                        aux.append(tk)
-                        rs.append(aux)
-                        aux = []
+        for tk in tokens:
+            if tk[-1] is ".":
+                if tk in self.abbreviation:
+                    aux.append(tk)
                 else:
                     aux.append(tk)
-        else:
-            for tk in tokens:
-                if tk[-1] is ".":
-                    if tk in self.abbreviation:
-                        aux.append(tk)
-                    else:
-                        aux.append(tk)
-                        rs.append(self.token2String(aux))
-                        aux = []
-                else:
-                    aux.append(tk)
+                    rs.append(self.token2String(aux))
+                    aux = []
+            else:
+                aux.append(tk)
 
         return rs
-
-    def teste(self):
-        print(self.abbreviation)
-        if "dr." in self.abbreviation:
-            print("ok")
-
-teste = prebotSupport("pt-br")
-print(teste.splitInPhrase("teste de frase do Dr. Lucas.resende final. sem atilizacao de abreviacao."))

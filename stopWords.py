@@ -2,12 +2,17 @@ from support import prebotSupport
 
 class stopWord():
 
-    def __init__(self, path = ""):
+    def __init__(self,lang="pt-br" ,path = "stopWords.txt"):
         """
         Construct of the class
+        :param lang: String
         :param path: String
         """
-        self._path = path
+        if(not path):
+            self._path = os.path.join("lang",lang,"stopWords.txt")
+        else:
+            self._path = path
+        self._lang = lang
         self.stopWords = self.getStopWordsFromFile()
 
     def setPath(self,path):
@@ -54,7 +59,7 @@ class stopWord():
         Remove all stop word of phrase
         :return: List
         """
-        ps = prebotSupport()
+        ps = prebotSupport(self._lang)
         aux = ps.string2Token(pharse)
         for tk in aux:
             if(tk in self.stopWords):

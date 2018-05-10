@@ -17,3 +17,5 @@ print(teste.string2Token("teste de token"))
 print(teste.wrongSpaces("teste                de correçao de espaços"))
 
 print(teste.firstUpper("ola quero upper no primeiro"))
+
+print(teste.splitInPhrase("teste de split. segunda frase"))

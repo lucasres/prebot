@@ -115,7 +115,7 @@ class facadePrebot():
         :return: String
         """
         if(wordsPath is None):
-            sp = spellChecker(os.path.join("lang",self._lang,"wordsCorrect.txt"))
+            sp = spellChecker(self._lang, os.path.join("lang",self._lang,"wordsCorrect.txt"))
             return sp.fixThePharse(pInput)
         else:
             sp = spellChecker(wordsPath)
@@ -145,7 +145,7 @@ class facadePrebot():
         :return: String
         """
         if(stopWordsPath is None):
-            rs = stopWord(os.path.join("lang",self._lang,"stopWords.txt"))
+            rs = stopWord(self._lang ,os.path.join("lang",self._lang,"stopWords.txt"))
             if(tk):
                 return rs.removeStopWord(phrase)
             else :
@@ -172,3 +172,11 @@ class facadePrebot():
         :return: List
         """
         return self._suport.string2Token(phrase)
+
+    def splitInPhrase(self,text):
+        """
+        Split text phrase in list
+        :param text: String
+        :return : List
+        """
+        return self._suport.splitInPhrase(text)

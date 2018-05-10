@@ -1,13 +1,19 @@
 # -*- coding: latin-1 -*-
 from support import prebotSupport
+import os
 
 class spellChecker():
-    def __init__(self,path = "wordsCorrect.txt"):
+    def __init__(self,lang="pt-br",path = ""):
         """
         This is the construct of the class. Is responsable for load the words pattern that will usies in the spell checker
         :return:
         """
-        self.wordsPath = path
+        if(not path):
+            self.wordsPath = os.path.join("lang",lang,"wordsCorrect.txt")
+        else:
+            self.wordsPath = path
+
+        self.lang = lang
         self.WORDS = self.getWordsFromFile()
 
     def getwordsCorrect(self):
@@ -48,7 +54,7 @@ class spellChecker():
         """
         #result of correction
         rs = []
-        sp = prebotSupport()
+        sp = prebotSupport(self.lang)
         #get tokens
         tokens = sp.string2Token(phrase)
         for tkOnly in tokens:
