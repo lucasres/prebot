@@ -1,8 +1,9 @@
+import os
 from support import prebotSupport
 
 class stopWord():
 
-    def __init__(self,lang="pt-br" ,path = "stopWords.txt"):
+    def __init__(self,lang="portuguese" ,path = ""):
         """
         Construct of the class
         :param lang: String

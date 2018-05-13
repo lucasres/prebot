@@ -7,7 +7,7 @@ from conf import conf
 import os
 
 class facadePrebot():
-    def __init__(self,lang,cogroo= False):
+    def __init__(self,lang="portuguese"):
         """
         Construct of the class. When instantiated this method call the other class of the framework.
         :return:
@@ -21,8 +21,6 @@ class facadePrebot():
         #support class
         self._suport = prebotSupport(lang)
         #if cogroo is necessary
-        if(cogroo):
-            pass
 
     def getLang(self):
         """
@@ -115,7 +113,7 @@ class facadePrebot():
         :return: String
         """
         if(wordsPath is None):
-            sp = spellChecker(self._lang, os.path.join("lang",self._lang,"wordsCorrect.txt"))
+            sp = spellChecker()
             return sp.fixThePharse(pInput)
         else:
             sp = spellChecker(wordsPath)
@@ -145,7 +143,7 @@ class facadePrebot():
         :return: String
         """
         if(stopWordsPath is None):
-            rs = stopWord(self._lang ,os.path.join("lang",self._lang,"stopWords.txt"))
+            rs = stopWord()
             if(tk):
                 return rs.removeStopWord(phrase)
             else :

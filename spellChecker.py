@@ -3,7 +3,7 @@ from support import prebotSupport
 import os
 
 class spellChecker():
-    def __init__(self,lang="pt-br",path = ""):
+    def __init__(self,lang="portuguese",path = ""):
         """
         This is the construct of the class. Is responsable for load the words pattern that will usies in the spell checker
         :return:

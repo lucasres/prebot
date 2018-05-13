@@ -2,7 +2,7 @@ from normalizeText import normalizeText
 import os
 
 class prebotSupport:
-    def __init__(self,lang):
+    def __init__(self,lang="portuguese"):
         """
         Construct of the class
         """
@@ -81,3 +81,8 @@ class prebotSupport:
                 aux.append(tk)
 
         return rs
+
+    def ngram(self,n):
+        """
+        
+        """

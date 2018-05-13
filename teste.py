@@ -1,7 +1,7 @@
 # -*- coding: latin-1 -*-
 from facadePrebot import facadePrebot
 
-teste = facadePrebot("pt-br")
+teste = facadePrebot("portuguese")
 
 #wrong space broker
 print(teste.removeSpecialCharacter("oláa, oi"))
