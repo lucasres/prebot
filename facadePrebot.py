@@ -4,6 +4,8 @@ from spellChecker import spellChecker
 from stopWords import stopWord
 from support import prebotSupport
 from conf import conf
+from stemming import stemming
+from posTagger import posTagger
 import os
 
 class facadePrebot():
@@ -20,7 +22,10 @@ class facadePrebot():
         self._normalizeText = normalizeText()
         #support class
         self._suport = prebotSupport(lang)
-        #if cogroo is necessary
+        #stemming class
+        self._stemming = stemming()
+        #posttager class
+        self._posTagger = posTagger()
 
     def getLang(self):
         """
@@ -37,13 +42,13 @@ class facadePrebot():
         """
         self._lang = lang
 
-    def wrongSpace(self,pInput):
+    def wrongSpace(self,phrase):
         """
-        Call wrongspace in NormalizeText class
+        Remove wrong spaces in the phrase
         :param inp: String
         :return: String
         """
-        return self._normalizeText.wrongSpaces(pInput)
+        return self._normalizeText.wrongSpaces(phrase)
 
     def getSupport(self):
         """
@@ -73,55 +78,55 @@ class facadePrebot():
         """
         return self._conf.getLanguages()
 
-    def upperCase(self,pInput):
+    def upperCase(self,phrase):
         """
-        Call upperCase in NormalizeText class
-        :param pInput: String
+        Upper all words of the phrase
+        :param phrase: String
         :return: String
         """
-        return self._normalizeText.upperCase(pInput)
+        return self._normalizeText.upperCase(phrase)
 
-    def lowerCase(self,pInput):
+    def lowerCase(self,phrase):
         """
-        Call lowerCase in NormalizeText class
-        :param pInput: String
+        Lower all words of the phrase
+        :param phrase: String
         :return: String
         """
-        return self._normalizeText.lowerCase(pInput)
+        return self._normalizeText.lowerCase(phrase)
 
-    def removeSpecialCharacter(self,pInput):
+    def removeSpecialCharacter(self,phrase):
         """
         Call removeSpecialCharacter in NormalizeText class
-        :param pInput: String
+        :param phrase: String
         :return: String
         """
-        return self._normalizeText.removeSpecialCharacter(pInput)
+        return self._normalizeText.removeSpecialCharacter(phrase)
 
     def firstUpper(self,phrase):
         """
-        Call fristUpper in normalizeText class
+        Captalize the text
         :param phrase: String
         :return : String
         """
         return self._normalizeText.firstUpper(phrase)
 
-    def spellChecker(self,pInput,wordsPath=None,tk = False):
+    def spellChecker(self,phrase,wordsPath=None,tk = False):
         """
-        Call spellchecker in NormalizeText class
-        :param pInput: String
+        Check if there is one in a sentence
+        :param phrase: String
         :param wordsPath: Optional String
         :return: String
         """
         if(wordsPath is None):
             sp = spellChecker()
-            return sp.fixThePharse(pInput)
+            return sp.fixThePharse(phrase)
         else:
             sp = spellChecker(wordsPath)
-            return sp.fixThePharse(pInput)
+            return sp.fixThePharse(phrase)
 
     def countWord(self,phrase):
         """
-        Call countWord in support Class
+        Count words of the phrase
         :param phrase: String
         :return : Int
         """
@@ -178,3 +183,35 @@ class facadePrebot():
         :return : List
         """
         return self._suport.splitInPhrase(text)
+
+    def stemmingPhrase(self,phrase):
+        """
+        Steamming all words of the phrase and return in list
+        :param phrase: String
+        :return: List
+        """
+        return self._stemming.stemmingPhrase(phrase)
+
+    def stemmingWord(self,phrase):
+        """
+        Steamming all words of the phrase and return in list
+        :param phrase: String
+        :return: List
+        """
+        return self._stemming.stemmingWord(phrase)
+
+    def posTaggerWord(self,word):
+        """
+        This method make postagger of the word
+        :param word: String
+        :return : List
+        """
+        return self._posTagger.posTaggergWord(word)
+
+    def posTaggerPhrase(self,phrase):
+        """
+        This method make postagger in all word of the phrase and return in list
+        :param phrase: String
+        :return : List
+        """
+        return self._posTagger.posTaggerPhrase(phrase)
