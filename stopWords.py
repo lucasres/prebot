@@ -1,5 +1,5 @@
 import os
-from support import prebotSupport
+from utilities.support import prebotSupport
 
 class stopWord():
 

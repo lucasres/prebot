@@ -1,3 +1,6 @@
+import os
+import sys
+
 class conf():
 	"""Configuration of the framework"""
 	def __init__(self):
@@ -11,7 +14,7 @@ class conf():
 		Get all languagens of the framework
 		:return: List
 		"""
-		return ["pt-br","en-us"]
+		return ["portuguese"]
 
 	def langExist(self,lang):
 		"""
@@ -22,3 +25,7 @@ class conf():
 			return lang
 		else:
 			return "pt-br"
+
+	def addInPath(self):
+
+		print(sys.path)

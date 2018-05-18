@@ -1,12 +1,15 @@
 # -*- coding: latin-1 -*-
-from normalizeText import normalizeText
+import sys
+import os
+sys.path.append(os.path.abspath(__file__)[:-17])
+print(sys.path)
+
+#imports of framework
+from utilities.normalizeText import normalizeText
 from spellChecker import spellChecker
 from stopWords import stopWord
-from support import prebotSupport
+from utilities.support import prebotSupport
 from conf import conf
-from stemming import stemming
-from posTagger import posTagger
-import os
 
 class facadePrebot():
     def __init__(self,lang="portuguese"):
@@ -22,10 +25,6 @@ class facadePrebot():
         self._normalizeText = normalizeText()
         #support class
         self._suport = prebotSupport(lang)
-        #stemming class
-        self._stemming = stemming()
-        #posttager class
-        self._posTagger = posTagger()
 
     def getLang(self):
         """
@@ -183,35 +182,3 @@ class facadePrebot():
         :return : List
         """
         return self._suport.splitInPhrase(text)
-
-    def stemmingPhrase(self,phrase):
-        """
-        Steamming all words of the phrase and return in list
-        :param phrase: String
-        :return: List
-        """
-        return self._stemming.stemmingPhrase(phrase)
-
-    def stemmingWord(self,phrase):
-        """
-        Steamming all words of the phrase and return in list
-        :param phrase: String
-        :return: List
-        """
-        return self._stemming.stemmingWord(phrase)
-
-    def posTaggerWord(self,word):
-        """
-        This method make postagger of the word
-        :param word: String
-        :return : List
-        """
-        return self._posTagger.posTaggergWord(word)
-
-    def posTaggerPhrase(self,phrase):
-        """
-        This method make postagger in all word of the phrase and return in list
-        :param phrase: String
-        :return : List
-        """
-        return self._posTagger.posTaggerPhrase(phrase)

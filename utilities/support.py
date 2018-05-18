@@ -1,5 +1,6 @@
-from normalizeText import normalizeText
+from .normalizeText import  normalizeText
 import os
+import sys
 
 class prebotSupport:
     def __init__(self,lang="portuguese"):
@@ -48,7 +49,8 @@ class prebotSupport:
         :return: List
         """
         aux = []
-        with open(os.path.join("lang",self.lang,"abbreviation.txt")) as f:
+        path = os.path.join(sys.path[-1],"lang",self.lang,"abbreviation.txt")
+        with open(path) as f:
             content = f.readlines()
         content = [x.strip() for x in content]
         for ab in content:
@@ -82,7 +84,48 @@ class prebotSupport:
 
         return rs
 
-    def ngram(self,n):
+    def bagOfWords(self, phrase):
         """
-        
+        Create the bag of words
+        :param phrase: String
+        :return: Dict
         """
+        nt = normalizeText()
+        aux = self.string2Token(nt.removePunctuation(phrase))
+        bagWords = {}
+        for tk in aux:
+            if tk in bagWords:
+                count = bagWords.get(tk)
+                count += 1
+                bagWords.update({tk: count})
+            else:
+                bagWords.update({tk: 1})
+
+        return bagWords
+
+    def ngram(self, phrase, n, unit="word"):
+        """
+        Return ngram of the phrase
+        :param phrase: String
+        :param n: Int
+        :param unit: String
+        :return: List
+        """
+        gram = []
+        if (unit is "word"):
+            aux = self.string2Token(phrase)
+            if (len(aux) <= n):
+                return aux
+            else:
+                loop = len(aux) - (n - 1)
+                for i in range(loop):
+                    gram.append(aux[i:i + n])
+                return gram
+        else:
+            if (len(phrase) <= n):
+                return phrase
+            else:
+                loop = len(phrase) - (n - 1)
+                for i in range(loop):
+                    gram.append(phrase[i:i + n])
+                return gram

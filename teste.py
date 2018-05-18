@@ -19,9 +19,3 @@ print(teste.wrongSpaces("teste                de correçao de espaços"))
 print(teste.firstUpper("ola quero upper no primeiro"))
 
 print(teste.splitInPhrase("teste de split. segunda frase"))
-
-print(teste.stemmingWord("correndo"))
-
-print(teste.posTaggerWord("correr"))
-
-print(teste.posTaggerPhrase("estou correndo de voce"))

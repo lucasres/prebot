@@ -1,5 +1,5 @@
 # -*- coding: latin-1 -*-
-from support import prebotSupport
+from utilities.support import prebotSupport
 import os
 
 class spellChecker():
