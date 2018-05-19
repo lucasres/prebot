@@ -103,7 +103,7 @@ class prebotSupport:
 
         return bagWords
 
-    def ngram(self, phrase, n, unit="word"):
+    def ngram(self, phrase, n, unit="w"):
         """
         Return ngram of the phrase
         :param phrase: String
@@ -112,7 +112,7 @@ class prebotSupport:
         :return: List
         """
         gram = []
-        if (unit is "word"):
+        if (unit is "w"):
             aux = self.string2Token(phrase)
             if (len(aux) <= n):
                 return aux
