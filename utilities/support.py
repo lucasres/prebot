@@ -62,17 +62,15 @@ class prebotSupport:
         """
         Split text in phrase
         :param text: String
-        :return: List     """
+        :return: List
+        """
         aux = []
         rs = []
-        #check if end is .
-        if(not text[-1] is '.'):
-            text += '.'
 
         text = text.lower()
         tokens = self.string2Token(text)
         for tk in tokens:
-            if tk[-1] is ".":
+            if (tk[-1] is ".") or (tk[-1] is ",") or (tk[-1] is "?") or (tk[-1] is "!"):
                 if tk in self.abbreviation:
                     aux.append(tk)
                 else:

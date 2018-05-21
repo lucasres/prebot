@@ -1,6 +1,6 @@
 import nltk
 
-class stem():
+class stemming():
 	def __init__(self):
 		"""
 		Construct of the class, this method imstancie RSLP stemming
@@ -12,7 +12,4 @@ class stem():
 		stemming word
 		"""
 		return self._stem.stem(word)
-
-r = stem()
-print(r.stemmingWord("copiar"))
 
