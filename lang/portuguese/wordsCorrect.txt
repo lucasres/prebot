@@ -41,3 +41,14 @@ vlw,obrigado
 qq,qualquer
 pfv,por favor
 bjs,beijos
+ntc,não tem como
+porisso,por isso
+idéia,ideia
+apóio,apoio
+jóia,joia
+paranóia,paranoia
+jibóia,jiboia
+assembléia,assembleia
+baiúca,baiuca
+bocaiúva,bocaiuva
+feiúra,feiura

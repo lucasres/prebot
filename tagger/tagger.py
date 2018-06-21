@@ -1,5 +1,4 @@
 from urllib.parse import to_bytes
-
 from nltk.corpus import floresta
 from utilities.normalizeText import normalizeText
 from utilities.support import prebotSupport
@@ -24,10 +23,12 @@ class tagger():
 		:return: List
 		"""
 		word = self._nt.lowerCase(word)
-		print(word)
 		for tag in self._taggers:
 			if(self._stem.stemmingWord(word) == self._stem.stemmingWord(tag[0])):
 				return tag
+		return (word,None)
+
+
 
 	def taggerPhrase(self,phrase):
 		"""
@@ -39,5 +40,9 @@ class tagger():
 		phrase = self._nt.lowerCase(phrase)
 		tokens = self._sp.string2Token(phrase)
 		for tk in tokens:
-			aux.append(self.searchTagger(tk))
+			rs = self.searchTagger(tk)
+			if(rs[1] != None):
+				aux.append((rs[0],rs[1].split("+")[1]))
+			else :
+				aux.append((rs[0],None))
 		return aux

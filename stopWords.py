@@ -1,5 +1,6 @@
 import os
 from utilities.support import prebotSupport
+import sys
 
 class stopWord():
 
@@ -10,7 +11,7 @@ class stopWord():
         :param path: String
         """
         if(not path):
-            self._path = os.path.join("lang",lang,"stopWords.txt")
+            self._path = os.path.join(sys.path[-1],"lang",lang,"stopWords.txt")
         else:
             self._path = path
         self._lang = lang

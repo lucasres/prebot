@@ -4,6 +4,9 @@ sys.path.append(os.path.abspath(__file__)[:-10])
 from utilities.support import prebotSupport
 from tagger.tagger import tagger
 from utilities.normalizeText import normalizeText
+from spellChecker import spellChecker
+from stopWords import stopWord
+from stem.stem import stemming
 
 class prebotFacade():
     def __init__(self):
@@ -11,8 +14,11 @@ class prebotFacade():
         The constructor calls all subsystems.
         """
         self._support = prebotSupport()
-        #self._tagger = tagger()
+        self._tagger = tagger()
         self._normalize = normalizeText()
+        self._spellChecker = spellChecker()
+        self._stopWord = stopWord()
+        self._stem = stemming()
 
     def token2String(self,tokens):
         """
@@ -46,7 +52,7 @@ class prebotFacade():
         """
         return self._support.countWord(phrase)
 
-    def bagOfWord(self,phrase):
+    def bagOfWords(self,phrase):
         """
         Vectoriza a phrase in the model bag of words
         :param phrase: String
@@ -103,3 +109,59 @@ class prebotFacade():
         :return: List
         """
         return self._support.splitInPhrase(text)
+
+    def removeSpecialCharacter(self,phrase):
+        """
+        This method remove special character like ç.
+        :param phrase: String
+        :return: String
+        """
+        return self._normalize.removeSpecialCharacter(phrase)
+
+    def fixThePharse(self,phrase):
+        """
+        this method corrects the orthography of the sentence based on the correction file, all words correct are found in correctWords
+        :param phrase: String
+        :return: String
+        """
+        return self._spellChecker.fixThePharse(phrase)
+
+    def removeStopWords(self,phrase):
+        """
+        Remove all stop words, the stops words are found in file stopWords
+        :param phrase:
+        :return:
+        """
+        return self._stopWord.removeStopWord(phrase)
+
+    def wrongSpaces(self,phrase):
+        """
+        Correct the wrong space
+        :param phrase: String
+        :return: String
+        """
+        return self._normalize.wrongSpaces(phrase)
+
+    def firstUpper(self,phrase):
+        """
+        Upper case in first character
+        :param phrase: String
+        :return: String
+        """
+        return self._normalize.firstUpper(phrase)
+
+    def lowerCase(self,phrase):
+        """
+        Get phrase with all words in lower case
+        :param phrase: String
+        :return: String
+        """
+        return self._normalize.lowerCase(phrase)
+
+    def stemWord(self,word):
+        """
+        This method stem one word
+        :param Word: String
+        :return: String
+        """
+        return self._stem.stemmingWord(word)

@@ -1,6 +1,7 @@
 # -*- coding: latin-1 -*-
 from utilities.support import prebotSupport
 import os
+import sys
 
 class spellChecker():
     def __init__(self,lang="portuguese",path = ""):
@@ -9,7 +10,7 @@ class spellChecker():
         :return:
         """
         if(not path):
-            self.wordsPath = os.path.join("lang",lang,"wordsCorrect.txt")
+            self.wordsPath = os.path.join(sys.path[-1],"lang",lang,"wordsCorrect.txt")
         else:
             self.wordsPath = path
 

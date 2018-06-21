@@ -1,8 +1,7 @@
 # -*- coding: latin-1 -*-
 import sys
 import os
-sys.path.append(os.path.abspath(__file__)[:-17])
-print(sys.path)
+sys.path.append(os.path.abspath(__file__)[:-16])
 
 #imports of framework
 from utilities.normalizeText import normalizeText
