@@ -1924,6 +1924,15 @@ form label {
     text-align: left;
 }
 
+thead {
+  border-bottom: #822b96 1px solid;
+  color: #822b96;
+}
+
+td {
+  text-align: left;
+  padding: 10px;
+}
 
 @media only screen and (max-width: 600px) {
     .jumbo {

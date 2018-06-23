@@ -66,7 +66,7 @@ class prebotFacade():
         """
         return self._support.bagOfWords(phrase)
 
-    def ngram(self,phrase,n,unity="word"):
+    def ngram(self,phrase,n,unity="w"):
         """
         Contains a n-item sequence of a statement. Since n is the number of items and unity the unit of the item (c = char or w = word)
         :param phrase: String
@@ -82,7 +82,8 @@ class prebotFacade():
         :param word: String
         :return: List
         """
-        return self._tagger.searchTagger(word)
+        if("tagger" in self._classes):
+            return self._tagger.searchTagger(word)
 
     def taggerPhrase(self,phrase):
         """
@@ -90,7 +91,8 @@ class prebotFacade():
         :param phrase: String
         :return: List
         """
-        return self._tagger.taggerPhrase(phrase)
+        if("tagger" in self._classes):
+            return self._tagger.taggerPhrase(phrase)
 
     def removePunctuation(self,phrase):
         """
@@ -98,7 +100,8 @@ class prebotFacade():
         :param phrase: String
         :return: String
         """
-        return self._normalize.removePunctuation(phrase)
+        if("normalizeText" in self._classes):
+            return self._normalize.removePunctuation(phrase)
 
     def removeWrongSpaces(self,phrase):
         """
@@ -106,7 +109,8 @@ class prebotFacade():
         :param phrase: String
         :return: String
         """
-        return self._normalize.wrongSpaces(phrase)
+        if("normalizeText" in self._classes):
+            return self._normalize.wrongSpaces(phrase)
 
     def splitInPhrase(self,text):
         """
@@ -122,7 +126,8 @@ class prebotFacade():
         :param phrase: String
         :return: String
         """
-        return self._normalize.removeSpecialCharacter(phrase)
+        if("normalizeText" in self._classes):
+            return self._normalize.removeSpecialCharacter(phrase)
 
     def fixThePharse(self,phrase):
         """
@@ -130,7 +135,17 @@ class prebotFacade():
         :param phrase: String
         :return: String
         """
-        return self._spellChecker.fixThePharse(phrase)
+        if("spellCheck" in self._classes):
+            return self._spellChecker.fixThePharse(phrase)
+
+    def fixWord(self,phrase):
+        """
+        this method corrects the orthography of one word based on the correction file, all words correct are found in correctWords
+        :param phrase: String
+        :return: String
+        """
+        if("spellCheck" in self._classes):
+            return self._spellChecker.fixWord(phrase)
 
     def removeStopWords(self,phrase):
         """
@@ -138,7 +153,8 @@ class prebotFacade():
         :param phrase:
         :return:
         """
-        return self._stopWord.removeStopWord(phrase)
+        if("stopWord" in self._classes):
+            return self._stopWord.removeStopWord(phrase)
 
     def wrongSpaces(self,phrase):
         """
@@ -146,7 +162,8 @@ class prebotFacade():
         :param phrase: String
         :return: String
         """
-        return self._normalize.wrongSpaces(phrase)
+        if("normalizeText" in self._classes):
+            return self._normalize.wrongSpaces(phrase)
 
     def firstUpper(self,phrase):
         """
@@ -154,7 +171,17 @@ class prebotFacade():
         :param phrase: String
         :return: String
         """
-        return self._normalize.firstUpper(phrase)
+        if("normalizeText" in self._classes):
+            return self._normalize.firstUpper(phrase)
+
+    def upperCase(self,phrase):
+        """
+        Upper case in all phrase
+        :param phrase: String
+        :return: String
+        """
+        if("normalizeText" in self._classes):
+            return self._normalize.upperCase(phrase)
 
     def lowerCase(self,phrase):
         """
@@ -162,7 +189,8 @@ class prebotFacade():
         :param phrase: String
         :return: String
         """
-        return self._normalize.lowerCase(phrase)
+        if("normalizeText" in self._classes):
+            return self._normalize.lowerCase(phrase)
 
     def stemWord(self,word):
         """
@@ -170,4 +198,5 @@ class prebotFacade():
         :param Word: String
         :return: String
         """
-        return self._stem.stemmingWord(word)
+        if("stem" in self._classes):
+            return self._stem.stemmingWord(word)

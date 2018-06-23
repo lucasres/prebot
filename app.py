@@ -22,7 +22,7 @@ class app():
         :param userInput: String
         :return: String
         """
-        pass
+        return self._prebot.fixThePharse(userInput)
 
     def command(self,pInput):
         """
