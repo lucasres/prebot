@@ -9,16 +9,22 @@ from stopWords import stopWord
 from stem.stem import stemming
 
 class prebotFacade():
-    def __init__(self):
+    def __init__(self,classes=['normalizeText','tagger','stem','stopWord','spellCheck']):
         """
         The constructor calls all subsystems.
         """
         self._support = prebotSupport()
-        self._tagger = tagger()
-        self._normalize = normalizeText()
-        self._spellChecker = spellChecker()
-        self._stopWord = stopWord()
-        self._stem = stemming()
+        self._classes = classes
+        if("tagger" in self._classes):
+            self._tagger = tagger()
+        if("normalizeText" in self._classes):
+            self._normalize = normalizeText()
+        if("spellCheck" in self._classes):
+            self._spellChecker = spellChecker()
+        if("stopWord" in self._classes):
+            self._stopWord = stopWord()
+        if("stem" in self._classes):
+            self._stem = stemming()
 
     def token2String(self,tokens):
         """
