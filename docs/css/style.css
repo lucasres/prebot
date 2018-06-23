@@ -1882,3 +1882,51 @@ form label {
 }
 
 /*# sourceMappingURL=style.css.map */
+
+.jumbo {
+  margin-top: -7em;
+}
+
+.submenus ul {
+    list-style-type: none;
+    text-align: left;
+}
+
+.submenus li {
+    list-style-type: none;
+    text-align: left;
+}
+
+.submenus a::before {
+    content: '#';
+}
+.marcador::before {
+  content: "#";
+  font-weight: bold; 
+  color: #822b96 ;
+}
+
+.titulo {
+    font-size: 48px;
+    font-weight: 200;
+    display: block;
+    text-align: left;
+    color: #822b96 ;
+}
+
+.subtitulo {
+    font-size: 30px;
+    font-weight: 400;
+    margin-top: 55px;
+    margin-bottom: 15px;
+    position: relative;
+    display: block;
+    text-align: left;
+}
+
+
+@media only screen and (max-width: 600px) {
+    .jumbo {
+      margin-top: 1em;
+    }
+}

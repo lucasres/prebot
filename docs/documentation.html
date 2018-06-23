@@ -8,7 +8,7 @@
 	<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Cube &mdash; Free Website Template, Free HTML5 Template by gettemplates.co</title>
+	<title>Prebot &mdash; Documentação</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Free HTML5 Website Template by gettemplates.co" />
 	<meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
@@ -45,6 +45,7 @@
 
 	<!-- Theme style  -->
 	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/prism.css">
 
 	<!-- Modernizr JS -->
 	<script src="js/modernizr-2.6.2.min.js"></script>
@@ -52,6 +53,8 @@
 	<!--[if lt IE 9]>
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
+	<!-- higth ligth -->
+	
 
 	</head>
 	<body>
@@ -70,8 +73,9 @@
 					<div class="col-xs-10 text-right menu-1">
 						<ul>
 							<li><a href="index.html">Home</a></li>
-							<li><a href="about.html">About</a></li>
-							<li class="has-dropdown">
+							<li class="active"><a href="documentation.html">Documentação</a></li>
+							
+							<!-- <li class="has-dropdown active">
 								<a href="services.html">Services</a>
 								<ul class="dropdown">
 									<li><a href="#">Web Design</a></li>
@@ -80,6 +84,7 @@
 									<li><a href="#">API</a></li>
 								</ul>
 							</li>
+							
 							<li class="has-dropdown">
 								<a href="#">Dropdown</a>
 								<ul class="dropdown">
@@ -88,9 +93,10 @@
 									<li><a href="#">Sass</a></li>
 									<li><a href="#">jQuery</a></li>
 								</ul>
-							</li>
+							</li> -->
+							
 							<li><a href="portfolio.html">Portfolio</a></li>
-							<li class="active"><a href="contact.html">Contact</a></li>
+							<li><a href="contact.html">Contact</a></li>
 						</ul>
 					</div>
 				</div>
@@ -98,7 +104,7 @@
 			</div>
 		</nav>
 
-		<header id="gtco-header" class="gtco-cover gtco-cover-xs gtco-inner" role="banner">
+		<header id="gtco-header" style="height: 350px;" class="gtco-cover gtco-cover-xs gtco-inner jumbo" role="banner">
 			<div class="gtco-container">
 				<div class="row">
 					<div class="col-md-12 col-md-offset-0 text-left">
@@ -106,8 +112,8 @@
 							<div class="display-tc">
 								<div class="row">
 									<div class="col-md-8">
-										<h1 class="no-margin">Contact</h1>
-										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia facilis, accusamus iusto animi.</p>
+										<h1 class="no-margin">Documentação</h1>
+										<p>Tudo o que você precisa saber, está aqui.</p>
 									</div>
 								</div>
 							</div>
@@ -118,62 +124,85 @@
 		</header>
 		<!-- END #gtco-header -->
 
-		
-
-		<div class="gtco-section">
+		<div class="gtco-services gtco-section">
 			<div class="gtco-container">
-				<div class="row">
-					<div class="col-md-8 col-md-offset-2 gtco-heading text-center">
-						<h2>Get In Touch</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus placerat enim et urna sagittis, rhoncus euismod erat tincidunt. Donec tincidunt volutpat erat.</p>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-6">
-						<form action="#">
-							<div class="form-group">
-								<label for="name">Name</label>
-								<input type="text" class="form-control" id="name">
-							</div>
-							<div class="form-group">
-								<label for="name">Email</label>
-								<input type="text" class="form-control" id="email">
-							</div>
-							<div class="form-group">
-								<label for="message"></label>
-								<textarea name="" id="message" cols="30" rows="10" class="form-control"></textarea>
-							</div>
-							<div class="form-group">
-								<input type="submit" class="btn btn btn-special" value="Send Message">
-							</div>
-						</form>
-					</div>
-					<div class="col-md-5 col-md-push-1">
-						<div class="gtco-contact-info">
-							<h3>Our Address</h3>
-							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-							<ul >
-								<li class="address">198 West 21th Street, Suite 721 New York NY 10016</li>
-								<li class="phone"><a href="tel://1234567890">1235 2355 980</a></li>
-								<li class="email"><a href="#">info@yoursite.com</a></li>
-								<li class="url"><a href="#">www.yoursite.com</a></li>
-							</ul>
+				<div class="row row-pb-md">
+					<!-- menu -->
+					<div class="col-md-4 col-sm-4 service-wrap">
+						<div class="service">
+							<h3><i class="ti-book"></i> Tópicos</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur voluptatibus nesciunt, est alias deleniti ipsum fuga ullam maxime repudiandae neque, ad. Maiores quis atque, culpa rem inventore vero amet praesentium, quam sint, magnam reprehenderit doloremque.</p>
 						</div>
 					</div>
+					<!-- conteudo -->
+					<div class="col-md-8 col-sm-8 service-wrap">
+						<div class="service">
+							<span class="titulo"><i class="ti-download"></i> Instalação</span>
+							<ul class="submenus">
+								<li>
+									<a href="#instalaçao" class="marcador">Instalação</a>
+									<ul>
+										<li>
+											<a href="#server-requirements">Requisitos</a>
+										</li>
+										<li>
+											<a href="#installing-laravel">Download Prebot</a>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h2 class="marcador subtitulo" id="instalaçao">Instalação</h2>
+							<h3>Requisitos</h3>
+							<p>
+								O framework prebot requer alguns requisitos para poder funcionar corretamente. Mas não se preocupe é muito fácil consegui-los.
+								Primeiramente você deve baixar o <a target="_blank" href="https://www.nltk.org" alt="Home page do NLTK">NLTK</a>. O frmaework usa essa biblioteca para a realização de alguns métodos que envolvem processamento de linguagem natural.
+							</p>
+							<p>
+								Você pode baixa-los atraves do PIP, execute em seu terminal o seguinte comando:
+							</p>
+							<pre>
+							<code class="language-python">							
+								pip install nltk
+							</code>
+							</pre>
+							<p>
+								Uma vez instalado você precisará baixar o corpora Floresta e o algoritimo de steamming RSLP. Abra seu terminal e execute o comando <strong>python</strong>, para poder entar no interpretador, uma vez nele basta executar os seguinte passos:
+							</p>
+							<pre>
+							<code class="language-python">							
+								import nltk
+								nltk.download()
+							</code>
+							</pre>
+							<p>
+								Pronto agora aparecerá uma janela de gerenciamento de download ou na própia linha de comando do terminal ira aparecer as opçoes. Basta agora baixar o corpora Floresta e o steamming RSLP.
+							</p>
+							<h3>Download Prebot</h3>
+							<p>
+								Acesse a página do projeto no github, clicando <a href="https://github.com/mandala21/prebot">AQUI</a>, e baxei o projeto da forma que achar mais conveniente. Ou pode executar o comando abaixo no seu terminal e clonar o repositório.
+							</p>
+							<pre>
+							<code class="language-python">							
+								git clone https://github.com/mandala21/prebot.git
+							</code>
+							</pre>
+							<p>
+								Pronto se tudo estiver ocorrido ok, você já pode usar o framework.
+							</p>
+						</div>
+					</div>
+
 				</div>
 			</div>
 		</div>
 		<!-- END .gtco-services -->
-
-		
-		<div id="map"></div>
 		
 
 		<footer id="gtco-footer" class="gtco-section" role="contentinfo">
 			<div class="gtco-container">
 				<div class="row row-pb-md">
 					<div class="col-md-8 col-md-offset-2 gtco-cta text-center">
-						<h3>We Love To Talk About Your Business</h3>
+						<h3>Você quer ajudar nosso projeto?</h3>
 						<p><a href="#" class="btn btn-white btn-outline">Contact Us</a></p>
 					</div>
 				</div>
@@ -245,13 +274,10 @@
 	<!-- Magnific Popup -->
 	<script src="js/jquery.magnific-popup.min.js"></script>
 	<script src="js/magnific-popup-options.js"></script>
-
-	<!-- Google Map -->
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCefOgb1ZWqYtj7raVSmN4PL2WkTrc-KyA&sensor=false"></script>
-	<script src="js/google_map.js"></script>
-	
 	<!-- Main -->
 	<script src="js/main.js"></script>
+	<!-- higthligth -->
+	<script src="js/prism.js"></script>
 
 	</body>
 </html>
