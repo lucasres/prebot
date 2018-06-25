@@ -20,14 +20,24 @@ class tagger():
 		"""
 		Search in corpora for word and return word and tagger in list
 		:param word: String
-		:return: List
+		:return: Tuple
 		"""
 		word = self._nt.lowerCase(word)
 		for tag in self._taggers:
-			if(self._stem.stemmingWord(word) == self._stem.stemmingWord(tag[0])):
+			if(word == tag[0]):
 				return tag
 		return (word,None)
 
+
+	def taggerWord(self,word):
+		"""
+		Tagger a single word
+		:param word: String
+		:return: Tuple
+		"""
+		tagger = self.searchTagger(word)
+		if(not tagger[1] is None):
+			return (word,tagger[1].split('+')[1])
 
 
 	def taggerPhrase(self,phrase):

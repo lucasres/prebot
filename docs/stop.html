@@ -177,56 +177,38 @@
                     <div class="col-md-8 col-sm-8 service-wrap">
                         <div class="service">
                             <span class="titulo">
-                                <i class="ti-check"></i> Spell Check</span>
+                                <i class="ti-trash"></i> StopWord</span>
                             <ul class="submenus">
                                 <li>
-                                    <a href="#sp" class="marcador">spellCheck</a>
+                                    <a href="#st" class="marcador">stopWord</a>
                                     <ul>
                                         <li>
-                                            <a href="#spc">fixThePhrase</a>
-                                        </li>
-                                        <li>
-                                            <a href="#spc">fixWord</a>
+                                            <a href="#rmstop">removeStopWords</a>
                                         </li>
                                     </ul>
                                 </li>
                             </ul>
-                            <h2 class="marcador subtitulo" id="sp">spellCheck</h2>
+                            <h2 class="marcador subtitulo" id="st">stopWord</h2>
 
-                            <h3 id="spc">spellCheck</h3>
+                            <h3 id="rmstop">stopWord</h3>
                             <p>
-                                Métodos que corrigem a entrada do usuário.
+                                Remove stop words de uma phrase
                             </p>
 
                             <br>
-                            <h3 id="s2t">fixThePhrase</h3>
+                            <h3 id="st">removeStopWords</h3>
                             <p>
-                                Esse método tem como parâmetro de entrada uma string, essa string é processada e corrigida, baseada no arquivo prebot/lang/portuguese/wordsCorrect.txt. Esse arquivo contém uma lista de palavras erradas e gírias comuns da lingua portuguesa e sua correção.
+                                Esse algoritmo remove as stop words de uma frase. Stop Words são palavras que não influenciam no entendimento de uma frase. A entrada desse método é divido em tokens, e cada token é checado a partir de uma lista, caso ele esteja nela, ele é removido da frase. 
                                 <br>
-                                O algoritmo lê linha por linha do arquivo, a linha é composta por duas palvras e uma vírgula, a primeira palavras é a errada e a 2 é a correção.  Você pode facilmente alterar o arquivo colocando suas customizaçõe.
+                                A lista pode ser encontrada em lang/portuguese/stopWords.txt. Esta lista é baseada em <a href="https://gist.github.com/alopes/5358189" target="_blank" alt="lista de stop words">https://gist.github.com/alopes/5358189</a>
                             </p>
 
                             <pre>
 								<code class="language-python">							
-                                    print(pb.fixThePharse("que bom que vc veio aki"))
-                                    #que bom que você veio aqui
+                                    print(pb.removeSopWords("qual é o seu nome"))
+                                    #nome
                                 </code>
                             </pre>
-
-                            <br>
-                            <h3 id="fixw">fixWord</h3>
-                            <p>
-                                Esse método recebe uma string e corrige ela, baseada na lista anterior:
-                            </p>
-
-                            <pre>
-                            <code class="language-python">							
-                                print(pb.fixWord('vc'))
-                                #você
-                            </code>
-                            </pre>
-
-
                         </div>
                     </div>
 

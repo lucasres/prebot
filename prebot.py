@@ -83,7 +83,7 @@ class prebotFacade():
         :return: List
         """
         if("tagger" in self._classes):
-            return self._tagger.searchTagger(word)
+            return self._tagger.taggerWord(word)
 
     def taggerPhrase(self,phrase):
         """

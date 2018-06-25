@@ -177,56 +177,53 @@
                     <div class="col-md-8 col-sm-8 service-wrap">
                         <div class="service">
                             <span class="titulo">
-                                <i class="ti-check"></i> Spell Check</span>
+                                <i class="ti-tag"></i> Tagger</span>
                             <ul class="submenus">
                                 <li>
-                                    <a href="#sp" class="marcador">spellCheck</a>
+                                    <a href="#st" class="marcador">Tagger</a>
                                     <ul>
                                         <li>
-                                            <a href="#spc">fixThePhrase</a>
+                                            <a href="#spc">taggrWord</a>
                                         </li>
                                         <li>
-                                            <a href="#spc">fixWord</a>
+                                            <a href="#phr">taggrPhrase</a>
                                         </li>
                                     </ul>
                                 </li>
                             </ul>
-                            <h2 class="marcador subtitulo" id="sp">spellCheck</h2>
+                            <h2 class="marcador subtitulo" id="sp">Tagger</h2>
 
                             <h3 id="spc">spellCheck</h3>
                             <p>
-                                Métodos que corrigem a entrada do usuário.
+                                Essa classe contém métodos que realizam a POSTagger (etiquetagem) das palavras.
                             </p>
 
                             <br>
-                            <h3 id="s2t">fixThePhrase</h3>
+                            <h3 id="st">stemWord</h3>
                             <p>
-                                Esse método tem como parâmetro de entrada uma string, essa string é processada e corrigida, baseada no arquivo prebot/lang/portuguese/wordsCorrect.txt. Esse arquivo contém uma lista de palavras erradas e gírias comuns da lingua portuguesa e sua correção.
-                                <br>
-                                O algoritmo lê linha por linha do arquivo, a linha é composta por duas palvras e uma vírgula, a primeira palavras é a errada e a 2 é a correção.  Você pode facilmente alterar o arquivo colocando suas customizaçõe.
+                                Para auxiliar esse método foi utilizado o corpora <a href="https://www.linguateca.pt/Floresta/BibliaFlorestal/" target="_blank" alt="documentação floresta">Floresta</a>. O algoritmo compara a palavra com todas as palavras do corpora, e retorna uma tupla com a palvra e sua tag, caso esteja-la
                             </p>
 
                             <pre>
 								<code class="language-python">							
-                                    print(pb.fixThePharse("que bom que vc veio aki"))
-                                    #que bom que você veio aqui
+                                    print(pb.taggerWord("onde"))
+                                    #('onde', 'adv')
+                                    print(pb.taggerWord("caminhar")) 
+                                    #('caminhar', 'v-inf')
                                 </code>
                             </pre>
 
                             <br>
-                            <h3 id="fixw">fixWord</h3>
+                            <h3 id="phr">phraseTagger</h3>
                             <p>
-                                Esse método recebe uma string e corrige ela, baseada na lista anterior:
+                                O algoritmo usa o mesmo copora, mas nessa caso ele divide a entrada em tokens, após isso ele procura em todas as palavras analisadas no corpora e faz a etiquetagem. O retorno desse método é uma lista de tuplas que contém a palavra e a tag da mesma.
                             </p>
-
                             <pre>
-                            <code class="language-python">							
-                                print(pb.fixWord('vc'))
-                                #você
-                            </code>
+                                <code class="language-python">							
+                                    print(pb.taggerPhrase("eu sou um robô"))
+                                    #[('eu', 'pron-pers'), ('sou', 'v-fin'), ('um', 'art'), ('robô', 'n')]
+                                </code>
                             </pre>
-
-
                         </div>
                     </div>
 

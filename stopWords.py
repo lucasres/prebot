@@ -41,10 +41,8 @@ class stopWord():
 
         with open(self._path, 'r', encoding='utf8') as f:
             content = f.readlines()
-        # you may also want to remove whitespace characters like `\n` at the end of each line
         content = [x.strip() for x in content]
         for word in content:
-            # get in 0 word wrong and 1 word correct
             aux.append(word)
         return aux
 
@@ -63,8 +61,12 @@ class stopWord():
         """
         ps = prebotSupport(self._lang)
         aux = ps.string2Token(pharse)
+        rs = []
         for tk in aux:
+            print(tk)
             if(tk in self.stopWords):
-                aux.remove(tk)
+                pass
+            else:
+                rs.append(tk)
 
-        return aux;
+        return ps.token2String(rs)

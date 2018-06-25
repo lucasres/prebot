@@ -177,56 +177,75 @@
                     <div class="col-md-8 col-sm-8 service-wrap">
                         <div class="service">
                             <span class="titulo">
-                                <i class="ti-check"></i> Spell Check</span>
+                                <i class="ti-layout"></i> App</span>
                             <ul class="submenus">
                                 <li>
-                                    <a href="#sp" class="marcador">spellCheck</a>
+                                    <a href="#st" class="marcador">app</a>
                                     <ul>
                                         <li>
-                                            <a href="#spc">fixThePhrase</a>
-                                        </li>
-                                        <li>
-                                            <a href="#spc">fixWord</a>
+                                            <a href="#str">Estrutura</a>
                                         </li>
                                     </ul>
                                 </li>
                             </ul>
-                            <h2 class="marcador subtitulo" id="sp">spellCheck</h2>
+                            <h2 class="marcador subtitulo" id="st">App</h2>
 
-                            <h3 id="spc">spellCheck</h3>
+                            <h3 id="str">app</h3>
                             <p>
-                                Métodos que corrigem a entrada do usuário.
+                                Estrutura da classe app
                             </p>
 
                             <br>
-                            <h3 id="s2t">fixThePhrase</h3>
+                            <h3 id="st">Estrutura</h3>
                             <p>
-                                Esse método tem como parâmetro de entrada uma string, essa string é processada e corrigida, baseada no arquivo prebot/lang/portuguese/wordsCorrect.txt. Esse arquivo contém uma lista de palavras erradas e gírias comuns da lingua portuguesa e sua correção.
-                                <br>
-                                O algoritmo lê linha por linha do arquivo, a linha é composta por duas palvras e uma vírgula, a primeira palavras é a errada e a 2 é a correção.  Você pode facilmente alterar o arquivo colocando suas customizaçõe.
+                                Essa classe você pode implementar a sua engine, ela ja contém uma estrutura básica. O constrtor da classe importa a facade do framework e tem uma variável para o nome do bot. O método conversation é reponsavél pelo loop de conversa, engine é onde você implementa a engine do chatterbot, command é onde o usuário pode informar um comando por exemplo o de sair(!sair) e o init caso você queira uma inicialização
                             </p>
 
                             <pre>
 								<code class="language-python">							
-                                    print(pb.fixThePharse("que bom que vc veio aki"))
-                                    #que bom que você veio aqui
+                                    from prebot import prebotFacade
+                                    class app():
+                                        def __init__(self):
+                                            """
+                                            Construct of classe 
+                                            """
+                                            self._prebot = prebotFacade()
+                                            self._name = "BotName"
+                                        
+                                        def init(self):
+                                            """
+                                            Build a your init chatterbot
+                                            :return:
+                                            """
+                                            pass
+                                        
+                                        def engine(self,userInput):
+                                            """Build your engine conversation
+                                            :param userInput: String
+                                            :return: String
+                                            """
+                                            pass
+                                        
+                                        def command(self,pInput): 
+                                            """ Execute command 
+                                            :param input: String :return:
+                                            """
+                                            if(pInput == "!sair"):
+                                                exit(0)
+                                            
+                                        def conversation(self):
+                                            """
+                                            Call this method for start conversation
+                                            :return:
+                                            """
+                                            while(True):
+                                            userInput = input("User>")
+                                            self.command(userInput)
+                                            response = self.engine(userInput)
+                                            print(self._name+">"+response)
+                                        
                                 </code>
                             </pre>
-
-                            <br>
-                            <h3 id="fixw">fixWord</h3>
-                            <p>
-                                Esse método recebe uma string e corrige ela, baseada na lista anterior:
-                            </p>
-
-                            <pre>
-                            <code class="language-python">							
-                                print(pb.fixWord('vc'))
-                                #você
-                            </code>
-                            </pre>
-
-
                         </div>
                     </div>
 
