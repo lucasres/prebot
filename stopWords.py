@@ -4,7 +4,7 @@ import sys
 
 class stopWord():
 
-    def __init__(self,lang="portuguese" ,path = ""):
+    def __init__(self,lang="portuguese",path = ""):
         """
         Construct of the class
         :param lang: String
@@ -14,7 +14,6 @@ class stopWord():
             self._path = os.path.join(sys.path[-1],"lang",lang,"stopWords.txt")
         else:
             self._path = path
-        self._lang = lang
         self.stopWords = self.getStopWordsFromFile()
 
     def setPath(self,path):

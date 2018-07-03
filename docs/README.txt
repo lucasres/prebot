@@ -3,9 +3,9 @@ TITLE:
 Cube - 100% Fully Responsive Free HTML5 Bootstrap Template
 
 AUTHOR:
-DESIGNED & DEVELOPED by GetTemplates.co
+DESIGNED & DEVELOPED by freehtml5.co
 
-Website: http://gettemplates.co/
+Website: http://freehtml5.co/
 Twitter: http://twitter.com/gettemplatesco
 Facebook: http://facebook.com/gettemplatesco
 

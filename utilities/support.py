@@ -121,7 +121,7 @@ class prebotSupport:
                 return gram
         else:
             if (len(phrase) <= n):
-                return phrase
+                return [phrase]
             else:
                 loop = len(phrase) - (n - 1)
                 for i in range(loop):

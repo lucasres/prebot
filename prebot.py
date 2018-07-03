@@ -9,7 +9,7 @@ from stopWords import stopWord
 from stem.stem import stemming
 
 class prebotFacade():
-    def __init__(self,classes=['normalizeText','tagger','stem','stopWord','spellCheck']):
+    def __init__(self,classes=['normalizeText','tagger','stem','stopWord','spellChecker']):
         """
         The constructor calls all subsystems.
         """
@@ -19,7 +19,7 @@ class prebotFacade():
             self._tagger = tagger()
         if("normalizeText" in self._classes):
             self._normalize = normalizeText()
-        if("spellCheck" in self._classes):
+        if("spellChecker" in self._classes):
             self._spellChecker = spellChecker()
         if("stopWord" in self._classes):
             self._stopWord = stopWord()
@@ -135,7 +135,7 @@ class prebotFacade():
         :param phrase: String
         :return: String
         """
-        if("spellCheck" in self._classes):
+        if("spellChecker" in self._classes):
             return self._spellChecker.fixThePharse(phrase)
 
     def fixWord(self,phrase):
@@ -200,3 +200,11 @@ class prebotFacade():
         """
         if("stem" in self._classes):
             return self._stem.stemmingWord(word)
+
+    def getStopWordClass():
+        """
+        Get the instance of stopWord class
+        :return: Class
+        """
+        if("stopWord" in self._classes):
+            return self._stopWord

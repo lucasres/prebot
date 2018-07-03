@@ -11,15 +11,24 @@ class normalizeText():
 
     def wrongSpaces(self,pInput):
         """
-        Corrige os espaços errados da entrada substituindo por um único espaço
+        Corrige os espaÃ§os errados da entrada substituindo por um Ãºnico espaÃ§o
         :param input: String
         :return: String
         """
-        return sub(" +"," ",pInput)
+        aux = sub(" +"," ",pInput)
+        pun = ['.',',','!','?']
+        #check if is space in 0 index of string
+        if(aux[0] is " "):
+            aux = aux[1:]
+        #check is pontuaction
+        for i in range(len(aux)):
+            if((aux[i] in pun) and (aux[i-1] is " ")):
+                aux = aux[:i-1] + aux[i:] 
+        return aux
 
     def upperCase(self,pInput):
         """
-        Converte todos os caracteres da string em maiúsculo
+        Converte todos os caracteres da string em maiÃºsculo
         :param pInput: String
         :return: String
         """
@@ -27,7 +36,7 @@ class normalizeText():
 
     def lowerCase(self, pInput):
         """
-        Converte todos os caracteres da string em minúsculo
+        Converte todos os caracteres da string em minÃºsculo
         :param pInput: String
         :return: String
         """
@@ -47,7 +56,8 @@ class normalizeText():
         :param Pharse: String
         :return:String
         """
-        return ''.join(c for c in pharse if c not in punctuation)
+        aux = ''
+        return aux.join(tmp for tmp in pharse if tmp not in punctuation)
 
     def firstUpper(self,phrase):
         """

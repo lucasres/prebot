@@ -4,16 +4,15 @@ import os
 import sys
 
 class spellChecker():
-    def __init__(self,lang="portuguese",path = ""):
+    def __init__(self,lang="portuguese",path=""):
         """
         This is the construct of the class. Is responsable for load the words pattern that will usies in the spell checker
         :return:
         """
-        if(not path):
-            self.wordsPath = os.path.join(sys.path[-1],"lang",lang,"wordsCorrect.txt")
+        if (not path):
+            self._path = os.path.join(sys.path[-1], "lang", lang, "wordsCorrect.txt")
         else:
-            self.wordsPath = path
-
+            self._path = path
         self.lang = lang
         self.WORDS = self.getWordsFromFile()
 
@@ -77,7 +76,7 @@ class spellChecker():
         """
         aux = []
 
-        with open(self.wordsPath, 'r', encoding='utf8') as f:
+        with open(self._path, 'r', encoding='utf8') as f:
             content = f.readlines()
         # you may also want to remove whitespace characters like `\n` at the end of each line
         content = [x.strip() for x in content]
