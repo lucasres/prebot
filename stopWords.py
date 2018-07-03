@@ -14,6 +14,7 @@ class stopWord():
             self._path = os.path.join(sys.path[-1],"lang",lang,"stopWords.txt")
         else:
             self._path = path
+        self._lang = lang
         self.stopWords = self.getStopWordsFromFile()
 
     def setPath(self,path):
@@ -62,7 +63,6 @@ class stopWord():
         aux = ps.string2Token(pharse)
         rs = []
         for tk in aux:
-            print(tk)
             if(tk in self.stopWords):
                 pass
             else:

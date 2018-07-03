@@ -2,25 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5d4f545e-ac65-4418-b029-c370a14a611a" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/conf.py" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/README.txt" afterPath="$PROJECT_DIR$/docs/README.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/about.html" afterPath="$PROJECT_DIR$/docs/about.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/app.html" afterPath="$PROJECT_DIR$/docs/app.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/documentation.html" afterPath="$PROJECT_DIR$/docs/documentation.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/facade.html" afterPath="$PROJECT_DIR$/docs/facade.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/helloword.html" afterPath="$PROJECT_DIR$/docs/helloword.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/index.html" afterPath="$PROJECT_DIR$/docs/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/normalize.html" afterPath="$PROJECT_DIR$/docs/normalize.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/spell.html" afterPath="$PROJECT_DIR$/docs/spell.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/stem.html" afterPath="$PROJECT_DIR$/docs/stem.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/stop.html" afterPath="$PROJECT_DIR$/docs/stop.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/support.html" afterPath="$PROJECT_DIR$/docs/support.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/tagger.html" afterPath="$PROJECT_DIR$/docs/tagger.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/prebot.py" afterPath="$PROJECT_DIR$/prebot.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spellChecker.py" afterPath="$PROJECT_DIR$/spellChecker.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stopWords.py" afterPath="$PROJECT_DIR$/stopWords.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/utilities/normalizeText.py" afterPath="$PROJECT_DIR$/utilities/normalizeText.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/utilities/support.py" afterPath="$PROJECT_DIR$/utilities/support.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -44,28 +26,28 @@
       <file leaf-file-name="stopWords.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/stopWords.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="660">
-              <caret line="66" column="20" lean-forward="true" selection-start-line="66" selection-start-column="20" selection-end-line="66" selection-end-column="20" />
+            <state relative-caret-position="160">
+              <caret line="64" column="22" lean-forward="false" selection-start-line="64" selection-start-column="22" selection-end-line="64" selection-end-column="22" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="teste.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="teste.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/../teste.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="80">
-              <caret line="4" column="27" lean-forward="false" selection-start-line="4" selection-start-column="27" selection-end-line="4" selection-end-column="27" />
+              <caret line="4" column="30" lean-forward="true" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="51" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="prebot.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="prebot.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/prebot.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="258">
-              <caret line="137" column="24" lean-forward="false" selection-start-line="137" selection-start-column="24" selection-end-line="137" selection-end-column="24" />
+            <state relative-caret-position="220">
+              <caret line="23" column="20" lean-forward="false" selection-start-line="23" selection-start-column="12" selection-end-line="23" selection-end-column="20" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -128,10 +110,10 @@
         <option value="$PROJECT_DIR$/tagger/taggerMac.py" />
         <option value="$PROJECT_DIR$/lang/portuguese/wordsCorrect.txt" />
         <option value="$PROJECT_DIR$/app.py" />
-        <option value="$PROJECT_DIR$/stopWords.py" />
         <option value="$PROJECT_DIR$/prebot.py" />
         <option value="$PROJECT_DIR$/spellChecker.py" />
         <option value="$PROJECT_DIR$/../teste.py" />
+        <option value="$PROJECT_DIR$/stopWords.py" />
       </list>
     </option>
   </component>
@@ -558,14 +540,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/stopWords.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="66" column="20" lean-forward="true" selection-start-line="66" selection-start-column="20" selection-end-line="66" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/spellChecker.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
@@ -574,21 +548,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../teste.py">
+    <entry file="file://$PROJECT_DIR$/prebot.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="4" column="27" lean-forward="false" selection-start-line="4" selection-start-column="27" selection-end-line="4" selection-end-column="27" />
+        <state relative-caret-position="220">
+          <caret line="23" column="20" lean-forward="false" selection-start-line="23" selection-start-column="12" selection-end-line="23" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stopWords.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="64" column="22" lean-forward="false" selection-start-line="64" selection-start-column="22" selection-end-line="64" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/prebot.py">
+    <entry file="file://$PROJECT_DIR$/../teste.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="137" column="24" lean-forward="false" selection-start-line="137" selection-start-column="24" selection-end-line="137" selection-end-column="24" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="80">
+          <caret line="4" column="30" lean-forward="true" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="51" />
+          <folding />
         </state>
       </provider>
     </entry>
